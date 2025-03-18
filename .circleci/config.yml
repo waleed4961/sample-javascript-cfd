@@ -10,8 +10,8 @@ jobs:
           name: install dependencies
           command: npm install
       - run:
-          name: run test
-          command: npm run build
+          name: run tests
+          command: npm run test
 
 workflows:
    build_deploy:
