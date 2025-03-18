@@ -6,7 +6,12 @@ jobs:
       - image: cimg/node:23.10.0
     steps:
       - checkout
-      - run: node --version
+      - run: 
+          name: install dependencies
+          command: npm install
+      - run:
+          name: run test
+          command: npm run build
 
 workflows:
    build_deploy:
