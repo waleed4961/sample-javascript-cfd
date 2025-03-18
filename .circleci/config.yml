@@ -1,19 +1,21 @@
 version: 2.1
 
 jobs:
-  build:
+  test:
     docker:
       - image: cimg/node:23.10.0
     steps:
       - checkout
       - run: 
-          name: install dependencies
+          name: Install dependencies
           command: npm install
       - run:
-          name: run tests
+          name: Run tests
           command: npm run test
 
 workflows:
-   build_deploy:
-        jobs:
-         - build
+  version: 2
+  build_deploy:
+    jobs:
+      - test
+
